@@ -1,0 +1,123 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Playfair Display', serif;
+}
+
+body {
+  background-color: #000;
+  color: #fff;
+  overflow-x: hidden;
+}
+
+canvas#particles {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 50px;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border-radius: 30px;
+  width: 90%;
+  margin: 20px auto;
+}
+
+.logo {
+  height: 60px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  margin: 0 15px;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+nav a:hover {
+  color: #ccc;
+}
+
+.hero {
+  text-align: center;
+  padding: 150px 20px;
+}
+
+.glass {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(12px);
+  border-radius: 20px;
+  box-shadow: 0 0 40px rgba(255, 255, 255, 0.05);
+}
+
+.hero h1 {
+  font-size: 3.5rem;
+  letter-spacing: 3px;
+}
+
+.hero p {
+  margin-top: 10px;
+  font-size: 1.2rem;
+  color: #ccc;
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 25px;
+  background: rgba(255,255,255,0.1);
+  border-radius: 30px;
+  color: #fff;
+  text-decoration: none;
+  border: 1px solid rgba(255,255,255,0.2);
+  transition: background 0.3s;
+}
+
+.btn:hover {
+  background: rgba(255,255,255,0.3);
+}
+
+#perfumes {
+  padding: 100px 20px;
+  text-align: center;
+}
+
+#perfumes h2 {
+  font-size: 2rem;
+  margin-bottom: 50px;
+}
+
+.perfume-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.card img {
+  width: 100%;
+  border-radius: 15px;
+  margin-bottom: 10px;
+}
+
+#contacto {
+  text-align: center;
+  padding: 100px 20px;
+}
+
+footer {
+  text-align: center;
+  padding: 40px;
+  color: #888;
+}
