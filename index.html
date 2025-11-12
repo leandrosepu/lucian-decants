@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LUCIAN DECANTS — Soon</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+      color: white;
+    }
+
+    body {
+      background-color: #000;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .blur-bg {
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: rgba(255, 255, 255, 0.05);
+      filter: blur(100px);
+      z-index: 0;
+    }
+
+    img {
+      width: 150px;
+      margin-bottom: 30px;
+      filter: drop-shadow(0 0 10px rgba(255,255,255,0.2));
+      z-index: 1;
+    }
+
+    h1 {
+      font-size: 2.3rem;
+      letter-spacing: 4px;
+      margin-bottom: 10px;
+      font-weight: 500;
+      z-index: 1;
+    }
+
+    h2 {
+      font-size: 1rem;
+      opacity: 0.7;
+      letter-spacing: 3px;
+      margin-bottom: 40px;
+      z-index: 1;
+    }
+
+    #countdown {
+      font-size: 1.2rem;
+      font-weight: 300;
+      z-index: 1;
+      margin-bottom: 40px;
+    }
+
+    .contact {
+      font-size: 0.9rem;
+      opacity: 0.6;
+      z-index: 1;
+    }
+
+    a {
+      color: white;
+      text-decoration: none;
+      border-bottom: 1px solid rgba(255,255,255,0.3);
+    }
+  </style>
+</head>
+<body>
+  <div class="blur-bg"></div>
+  <img src="logo.png" alt="Lucian Decants Logo" />
+  <h1>LUCIAN DECANTS</h1>
+  <h2>SOON</h2>
+  <div id="countdown"></div>
+  <div class="contact">
+    Contáctanos en <a href="https://instagram.com/lucian.dcnts" target="_blank">@lucian.dcnts</a>
+  </div>
+
+  <script>
+    const countdown = document.getElementById('countdown');
+    const targetDate = new Date('Nov 20, 2025 00:00:00').getTime();
+
+    const updateCountdown = setInterval(() => {
+      const now = new Date().getTime();
+      const distance = targetDate - now;
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      countdown.innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+
+      if (distance < 0) {
+        clearInterval(updateCountdown);
+        countdown.innerHTML = "¡Ya estamos en línea!";
+      }
+    }, 1000);
+  </script>
+</body>
+</html>
